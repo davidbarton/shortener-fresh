@@ -2,12 +2,12 @@
   "lock": false,
   "tasks": {
     "check": "deno fmt --check && deno lint && deno check **/*.ts && deno check **/*.tsx",
-    "cli": "echo \"import '\\$fresh/src/dev/cli.ts'\" | deno run --unstable --allow-all -",
+    "cli": "echo \"import '\\$fresh/src/dev/cli.ts'\" | deno run --unstable --allow-all --unstable-kv -",
     "manifest": "deno task cli manifest $(pwd)",
-    "start": "deno run --allow-all --unstable-hmr=static/,routes/ dev.ts",
-    "build": "deno run --allow-all dev.ts build",
-    "preview": "deno run --allow-all main.ts",
-    "update": "deno run --allow-all -r https://fresh.deno.dev/update ."
+    "start": "deno run --allow-all --unstable-kv --unstable-hmr=static/,routes/ dev.ts",
+    "build": "deno run --allow-all --unstable-kv dev.ts build",
+    "preview": "deno run --allow-all --unstable-kv main.ts",
+    "update": "deno run --allow-all --unstable-kv -r https://fresh.deno.dev/update ."
   },
   "lint": {
     "rules": {
@@ -29,6 +29,8 @@
     "tailwindcss": "npm:tailwindcss@3.3.5",
     "tailwindcss/": "npm:/tailwindcss@3.3.5/",
     "tailwindcss/plugin": "npm:/tailwindcss@3.3.5/plugin.js",
+    "@tailwindcss/forms": "npm:@tailwindcss/forms@0.5.7",
+    "@tailwindcss/typography": "npm:@tailwindcss/typography@0.5.10",
     "$std/": "https://deno.land/std@0.214.0/"
   },
   "compilerOptions": {

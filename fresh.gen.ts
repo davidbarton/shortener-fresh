@@ -4,25 +4,27 @@
 
 import * as $_404 from "./routes/_404.tsx";
 import * as $_app from "./routes/_app.tsx";
-import * as $api_joke from "./routes/api/joke.ts";
-import * as $greet_name_ from "./routes/greet/[name].tsx";
+import * as $api_shortener_id_ from "./routes/api/shortener/[id].tsx";
+import * as $api_shortener_index from "./routes/api/shortener/index.tsx";
 import * as $index from "./routes/index.tsx";
-import * as $s_name_ from "./routes/s/[name].tsx";
-import * as $Counter from "./islands/Counter.tsx";
+import * as $s_id_ from "./routes/s/[id].tsx";
+import * as $tools_shortener_id_ from "./routes/tools/shortener/[id].tsx";
+import * as $tools_shortener_index from "./routes/tools/shortener/index.tsx";
+
 import { type Manifest } from "$fresh/server.ts";
 
 const manifest = {
   routes: {
     "./routes/_404.tsx": $_404,
     "./routes/_app.tsx": $_app,
-    "./routes/api/joke.ts": $api_joke,
-    "./routes/greet/[name].tsx": $greet_name_,
+    "./routes/api/shortener/[id].tsx": $api_shortener_id_,
+    "./routes/api/shortener/index.tsx": $api_shortener_index,
     "./routes/index.tsx": $index,
-    "./routes/s/[name].tsx": $s_name_,
+    "./routes/s/[id].tsx": $s_id_,
+    "./routes/tools/shortener/[id].tsx": $tools_shortener_id_,
+    "./routes/tools/shortener/index.tsx": $tools_shortener_index,
   },
-  islands: {
-    "./islands/Counter.tsx": $Counter,
-  },
+  islands: {},
   baseUrl: import.meta.url,
 } satisfies Manifest;
 
